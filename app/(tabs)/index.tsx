@@ -1,16 +1,21 @@
-import { Image, StyleSheet, Platform, View, Text } from 'react-native';
+import { StatusBar, Image, StyleSheet, Platform, View, Text } from 'react-native';
+import HomeScreen from '../screens/HomeScreen';
+import { Colors } from '@/constants/Colors';
+import { NavigationContainer } from '@react-navigation/native';
 
-export default function HomeScreen() {
+
+export default function App() {
   return (
-    <View>
-        <Text style={{margin: 40}}>
-          Whatsapp clone
-        </Text>
-    </View>
+    <NavigationContainer independent={true}>
+      <StatusBar backgroundColor={Colors.primaryColor} />
+      <HomeScreen />
+    </NavigationContainer>
+
+
   );
 }
 
-const styles = StyleSheet.create({
+{/* const styles = StyleSheet.create({
   titleContainer: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -27,4 +32,4 @@ const styles = StyleSheet.create({
     left: 0,
     position: 'absolute',
   },
-});
+}); */}
