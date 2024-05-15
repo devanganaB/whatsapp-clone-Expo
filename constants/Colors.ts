@@ -32,10 +32,9 @@ export const Colors = {
   teal: '#36897f',
   background: '#101d25',
   white: '#FFFFFF',
-  white2: '#FFFFFE',
   black: '#000000',
   blue: '#34b7f1',
-  textColor: '#cdd4da',
+  textColor: '#010e0c',
   textGrey: '#8b959a',
   red: '#e53f43',
 };
