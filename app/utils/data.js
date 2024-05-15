@@ -7,15 +7,15 @@ import User6 from '../../assets/images/user6.jpeg';
 import User7 from '../../assets/images/user7.jpeg';
 import User8 from '../../assets/images/user8.jpeg';
 import User9 from '../../assets/images/user9.jpeg';
-import User10 from '../../assets/images/user10.jpeg';
-import User11 from '../../assets/images/user11.jpeg';
+import User10 from '../../assets/images/user11.jpeg';
+import User11 from '../../assets/images/user10.jpeg';
 
 export const ChatListData = [
   {
     id: 1,
     name: 'Programmer',
     profile: User1,
-    time: '9:42',
+    time: '9:51',
     message: 'Hi, Programmer, How are you?',
     mute: false,
   },
@@ -23,7 +23,7 @@ export const ChatListData = [
     id: 2,
     name: 'Programmer',
     profile: User2,
-    time: '9:43',
+    time: '9:49',
     message: 'Hi, Programmer, How are you?',
     mute: true,
   },
@@ -39,7 +39,7 @@ export const ChatListData = [
     id: 4,
     name: 'Programmer',
     profile: User4,
-    time: '9:45',
+    time: '9:44',
     message: 'Hi, Programmer, How are you?',
     mute: false,
   },
@@ -47,7 +47,7 @@ export const ChatListData = [
     id: 5,
     name: 'Programmer',
     profile: User5,
-    time: '9:46',
+    time: '9:40',
     message: 'okay',
     mute: false,
   },
@@ -55,7 +55,7 @@ export const ChatListData = [
     id: 6,
     name: 'Bro',
     profile: User6,
-    time: '9:47',
+    time: '9:32',
     message: 'Something',
     mute: false,
   },
@@ -63,40 +63,41 @@ export const ChatListData = [
     id: 7,
     name: 'Family Group',
     profile: User7,
-    time: '9:48',
+    time: '9:30',
     message: 'Nice',
     mute: true,
   },
   {
     id: 8,
+    name: 'Mom',
+    profile: User11,
+    time: '9:22',
+    message: 'Nice',
+    mute: true,
+  },
+  {
+    id: 9,
     name: '+91 8901693017',
     profile: User8,
-    time: '9:49',
+    time: '9:19',
     message: 'Hi, Programmer, How are you?',
     mute: false,
   },
   {
-    id: 9,
+    id: 10,
     name: 'Saloniiii',
     profile: User9,
-    time: '9:50',
+    time: '9:10',
     message: 'Nice',
     mute: false,
   },
   {
-    id: 10,
+    id: 11,
     name: 'Programmer',
     profile: User10,
-    time: '9:51',
+    time: '9:08',
     message: 'Something, something!',
     mute: true,
   },
-  {
-    id: 11,
-    name: 'Mom',
-    profile: User11,
-    time: '9:52',
-    message: 'Nice',
-    mute: true,
-  },
+  
 ];

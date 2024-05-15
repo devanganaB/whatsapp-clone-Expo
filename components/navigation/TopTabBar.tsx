@@ -14,6 +14,7 @@ const Tab = createMaterialTopTabNavigator();
 export default function TopTabBar() {
     return (
         <Tab.Navigator
+            initialRouteName="Chats"
             screenOptions={() => ({
                 tabBarActiveTintColor: Colors.white,
                 tabBarInactiveTintColor: Colors.tertiary,
@@ -25,8 +26,8 @@ export default function TopTabBar() {
         >
 
             <Tab.Screen name="Camera" component={CameraTab} options={{
-                tabBarShowLabel:false,
-                tabBarIcon: ({color}) => (<VectorIcon
+                tabBarShowLabel: false,
+                tabBarIcon: ({ color }) => (<VectorIcon
                     type='FontAwesome'
                     name='camera'
                     color={color}

@@ -5,13 +5,33 @@ import React from 'react'
 
 import { Colors } from '@/constants/Colors'
 import { ChatListData } from '../app/utils/data.js'
+import { useNavigation } from '@react-navigation/native'
+
+
+
+
 
 export default function ChatListComponent() {
+
+    const navigation = useNavigation();
+
+    const onNavigate = () => {
+        navigation.navigate('ChatScreen');
+        };
+        // , {
+        //     contactId: contactId,
+        //     userId: userId,
+        // }
+    
+    
+
     return (
         <>
             {ChatListData.map(item => (
                 <View key={item.id}>
-                    <TouchableOpacity style={styles.container}>
+                    <TouchableOpacity
+                        onPress={() => onNavigate(item.id)}
+                        style={styles.container}>
                         <View style={styles.leftContainer}>
                             <Image
                                 source={item.profile}
