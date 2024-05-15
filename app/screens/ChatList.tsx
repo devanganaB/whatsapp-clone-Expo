@@ -14,7 +14,7 @@ export default function ChatList() {
       <ScrollView>
         <ChatListComponent />
       </ScrollView>
-      <TouchableOpacity style={styles.contactIcon}>
+      <TouchableOpacity style={styles.messageIcon}>
         <VectorIcon
           type="MaterialIcons"
           name="message"
@@ -28,7 +28,7 @@ export default function ChatList() {
 
 
 const styles = StyleSheet.create({
-  contactIcon: {
+  messageIcon: {
     backgroundColor: Colors.primaryColor,
     height: 50,
     width: 50,

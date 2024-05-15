@@ -9,7 +9,7 @@ export default function ChatFooter() {
     const [message, setMessage] = useState('');
     const [sendEnable, setSendEnable] = useState(false);
 
-    const onChange = (value) => {
+    const onChange = (value: React.SetStateAction<string>) => {
         setMessage(value);
         setSendEnable(true);
     };

@@ -37,4 +37,5 @@ export const Colors = {
   textColor: '#010e0c',
   textGrey: '#8b959a',
   red: '#e53f43',
+  userText: '#e1f3bc'
 };
