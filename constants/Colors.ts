@@ -35,7 +35,7 @@ export const Colors = {
   black: '#000000',
   blue: '#34b7f1',
   textColor: '#010e0c',
-  textGrey: '#8b959a',
+  textGrey: '#5b5b5b',
   red: '#e53f43',
   userText: '#e1f3bc'
 };

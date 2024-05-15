@@ -2,12 +2,13 @@ import { View, Text } from 'react-native'
 import React from 'react'
 
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-import Status from '@/app/screens/Status';
+import MyStatus from '@/components/MyStatus';
 import ChatList from '@/app/screens/ChatList';
 import CallList from '@/app/screens/CallList';
 import CameraTab from '@/app/screens/CameraTab';
 import { Colors } from '@/constants/Colors';
 import VectorIcon from '@/app/utils/VectorIcons';
+import StatusScreen from '@/app/screens/StatusScreen';
 
 const Tab = createMaterialTopTabNavigator();
 
@@ -34,7 +35,7 @@ export default function TopTabBar() {
                     size={20} />)
             }} />
             <Tab.Screen name="Chats" component={ChatList} />
-            <Tab.Screen name="Status" component={Status} />
+            <Tab.Screen name="Status" component={StatusScreen} />
             <Tab.Screen name="Calls" component={CallList} />
         </Tab.Navigator>
     )
