@@ -5,6 +5,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import ChatScreen from '../screens/ChatScreen';
 import NewMessage from '../screens/NewMessage';
+import SettingsScreen from '../screens/SettingsScreen';
 
 const Stack = createStackNavigator();
 
@@ -18,6 +19,7 @@ export default function App() {
       <Stack.Screen name="HomeScreen" component={HomeScreen} />
       <Stack.Screen name="ChatScreen" component={ChatScreen} />
       <Stack.Screen name="NewMessage" component={NewMessage} />
+      <Stack.Screen name="Settings" component={SettingsScreen} />
     </Stack.Navigator>
       {/* <HomeScreen /> */}
     </NavigationContainer>

@@ -29,7 +29,7 @@ export const Colors = {
   primaryColor: '#0c6258',
   secondaryColor: '#9da3a9',
   tertiary: '#0aad93',
-  textColor: '#010e0c',
+  textColor: '#394442',
   textGrey: '#5b5b5b',
   userText: '#e1f3bc',
   background: '#101d25',
