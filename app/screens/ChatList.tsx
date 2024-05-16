@@ -4,17 +4,26 @@ import React from 'react'
 import ChatListComponent from '@/components/ChatListComponent'
 import VectorIcon from '../utils/VectorIcons'
 import { Colors } from '@/constants/Colors'
+import { useNavigation } from '@react-navigation/native'
 
 
 
 
 export default function ChatList() {
+
+  const navigation = useNavigation();
+
+  const onNavigate =() =>{
+navigation.navigate('NewMessage')
+  }
+
+
   return (
     <View>
       <ScrollView>
         <ChatListComponent />
       </ScrollView>
-      <TouchableOpacity style={styles.messageIcon}>
+      <TouchableOpacity style={styles.messageIcon} onPress={onNavigate}>
         <VectorIcon
           type="MaterialIcons"
           name="message"

@@ -10,7 +10,7 @@ import User11 from '@/assets/images/user11.jpeg';
 export const RecentCallsData = [
   {
     id: 1,
-    name: 'Sameer Kashyap',
+    name: 'Programmer',
     profileImg: User5,
     time: 'June 15, 6:32 PM',
     incoming: true,
@@ -20,7 +20,7 @@ export const RecentCallsData = [
   },
   {
     id: 2,
-    name: 'Shivam Joshi',
+    name: 'Meow',
     profileImg: User6,
     time: 'Yesterday, 9:43 PM',
     incoming: false,
@@ -30,7 +30,7 @@ export const RecentCallsData = [
   },
   {
     id: 3,
-    name: 'Sanju',
+    name: 'Bro',
     profileImg: User7,
     time: 'Today, 6:32 PM',
     incoming: true,
@@ -40,7 +40,7 @@ export const RecentCallsData = [
   },
   {
     id: 4,
-    name: 'Avinash Jain',
+    name: 'Om',
     profileImg: User8,
     time: 'May 2, 9:43 PM',
     incoming: true,
@@ -50,7 +50,7 @@ export const RecentCallsData = [
   },
   {
     id: 5,
-    name: 'Anubhav Koli',
+    name: 'Jay',
     profileImg: User9,
     time: 'April 16, 6:32 PM',
     incoming: false,
@@ -70,7 +70,7 @@ export const RecentCallsData = [
   },
   {
     id: 7,
-    name: 'Jenny',
+    name: 'Jennie',
     profileImg: User4,
     time: 'Feb 2, 6:32 PM',
     incoming: false,
@@ -90,7 +90,7 @@ export const RecentCallsData = [
   },
   {
     id: 9,
-    name: 'Anubhav Koli',
+    name: 'Jay',
     profileImg: User9,
     time: 'April 16, 6:32 PM',
     incoming: false,
@@ -110,7 +110,7 @@ export const RecentCallsData = [
   },
   {
     id: 11,
-    name: 'Jenny',
+    name: 'Jennie',
     profileImg: User4,
     time: 'Feb 2, 6:32 PM',
     incoming: false,
@@ -130,7 +130,7 @@ export const RecentCallsData = [
   },
   {
     id: 13,
-    name: 'Anubhav Koli',
+    name: 'Jay',
     profileImg: User9,
     time: 'April 16, 6:32 PM',
     incoming: false,
@@ -150,7 +150,7 @@ export const RecentCallsData = [
   },
   {
     id: 15,
-    name: 'Jenny',
+    name: 'Jennie',
     profileImg: User4,
     time: 'Feb 2, 6:32 PM',
     incoming: false,
@@ -170,7 +170,7 @@ export const RecentCallsData = [
   },
   {
     id: 17,
-    name: 'Anubhav Koli',
+    name: 'Jay',
     profileImg: User9,
     time: 'April 16, 6:32 PM',
     incoming: false,
@@ -190,7 +190,7 @@ export const RecentCallsData = [
   },
   {
     id: 19,
-    name: 'Jenny',
+    name: 'Jennie',
     profileImg: User4,
     time: 'Feb 2, 6:32 PM',
     incoming: false,

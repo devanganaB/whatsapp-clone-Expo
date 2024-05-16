@@ -4,6 +4,7 @@ import { Colors } from '@/constants/Colors';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import ChatScreen from '../screens/ChatScreen';
+import NewMessage from '../screens/NewMessage';
 
 const Stack = createStackNavigator();
 
@@ -16,6 +17,7 @@ export default function App() {
       }}>
       <Stack.Screen name="HomeScreen" component={HomeScreen} />
       <Stack.Screen name="ChatScreen" component={ChatScreen} />
+      <Stack.Screen name="NewMessage" component={NewMessage} />
     </Stack.Navigator>
       {/* <HomeScreen /> */}
     </NavigationContainer>
