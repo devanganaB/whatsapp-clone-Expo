@@ -27,7 +27,7 @@ export default function MyStatus() {
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
-    margin:12
+    margin:5
   },
   profileStyle: {
     borderRadius: 50,

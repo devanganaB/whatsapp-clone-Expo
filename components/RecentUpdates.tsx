@@ -1,27 +1,41 @@
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import { Colors } from '@/constants/Colors';
-import Status1 from '../assets/images/status1.jpg';
+// import story1 from '../assets/images/status1.jpg';
 import { RecentStatusData } from '../app/utils/RecentStatusData'
+import StoryModal from './StoryModal';
 
 export default function RecentUpdates() {
+  const [showStatusModal, setShowStatusModal] = useState(false)
+
+  const setStatusTime = (itemId:number) => {
+    setShowStatusModal(prev => ({...prev, [itemId]: false}));
+  };
+
   return (
     <View>
       <Text style={styles.recentUpdates}>Recent Updates</Text>
       {RecentStatusData.map(item => (
         <View key={item.id}>
-        <TouchableOpacity>
-          <View style={styles.storySection}>
-            <View style={styles.imgStory}>
-              <Image source={Status1} style={styles.statusStyle} />
+          <TouchableOpacity>
+            <View style={styles.storyArea}>
+              <View style={styles.imgStory}>
+                <Image source={item.storyImg} style={styles.statusStyle} />
+              </View>
+              <View style={styles.storyInfo}>
+                <Text style={styles.username}>{item.name}</Text>
+                <Text style={styles.time}>{item.time}</Text>
+              </View>
             </View>
-            <View style={styles.statusInfo}>
-              <Text style={styles.username}>{item.name}</Text>
-              <Text style={styles.time}>{item.time}</Text>
-            </View>
-          </View>
 
-        </TouchableOpacity>
+          </TouchableOpacity>
+
+          <StoryModal
+            showStatusModal={showStatusModal || false}
+            setShowStatusModal={setShowStatusModal}
+            item={item}
+            setStatusTime={() => setStatusTime(item.id)}
+          />
         </View>
 
       ))}
@@ -62,11 +76,11 @@ const styles = StyleSheet.create({
     color: Colors.textGrey,
     marginTop: 3,
   },
-  storySection: {
+  storyArea: {
     flexDirection: 'row',
     marginTop: 15,
   },
-  statusInfo: {
+  storyInfo: {
     marginLeft: 15,
   },
 });

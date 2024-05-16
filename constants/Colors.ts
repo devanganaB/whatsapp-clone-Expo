@@ -29,13 +29,11 @@ export const Colors = {
   primaryColor: '#0c6258',
   secondaryColor: '#9da3a9',
   tertiary: '#0aad93',
-  teal: '#36897f',
+  textColor: '#010e0c',
+  textGrey: '#5b5b5b',
+  userText: '#e1f3bc',
   background: '#101d25',
   white: '#FFFFFF',
   black: '#000000',
-  blue: '#34b7f1',
-  textColor: '#010e0c',
-  textGrey: '#5b5b5b',
-  red: '#e53f43',
-  userText: '#e1f3bc'
+  teal: '#36897f',
 };
