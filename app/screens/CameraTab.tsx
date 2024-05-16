@@ -1,7 +1,8 @@
-import { View, Text , Pressable, StyleSheet, Alert, Image} from 'react-native'
+import { View, Text, Pressable, StyleSheet, Alert, Image } from 'react-native'
 import React, { useState } from 'react'
 import * as ImagePicker from 'expo-image-picker';
-import Profile from '@/assets/images/user1.jpg'
+// import Profile from '@/assets/images/user1.jpg'
+import { Colors } from '@/constants/Colors';
 
 export default function CameraTab() {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -28,15 +29,41 @@ export default function CameraTab() {
     }
   };
 
+  // Function to handle image removal
+  const removeImage = () => {
+    setSelectedImage(null);
+  };
+
   return (
-<View style={styles.container}>
-      {selectedImage && (
+    <View style={styles.container}>
+      {/* {selectedImage && (
         <Image source={{ uri: selectedImage }} style={styles.profileImage} />
+      )} */}
+      <View style={styles.imageContainer}>
+        <Pressable onPress={pickImageFromGallery}>
+          {selectedImage ? (
+            <Image source={{ uri: selectedImage }} style={styles.profileImage} />
+          ) : (
+            <View style={styles.placeholderCircle} />
+          )}
+        </Pressable>
+      </View>
+      {selectedImage && (
+        <>
+          <Pressable style={styles.button} onPress={removeImage}>
+            <Text style={styles.buttonText}>Remove Image</Text>
+          </Pressable>
+          <Pressable style={styles.button} onPress={pickImageFromGallery}>
+            <Text style={styles.buttonText}>Choose Image</Text>
+          </Pressable>
+        </>
       )}
 
-      <Pressable style={styles.button} onPress={pickImageFromGallery}>
-        <Text style={styles.buttonText}>Choose Image</Text>
-      </Pressable>
+      {!selectedImage && (
+        <Pressable style={styles.button} onPress={pickImageFromGallery}>
+          <Text style={styles.buttonText}>Choose Image</Text>
+        </Pressable>
+      )}
     </View>
   )
 }
@@ -53,11 +80,27 @@ const styles = StyleSheet.create({
     borderRadius: 100,
     marginBottom: 20,
   },
+  imageContainer: {
+    width: 200,
+    height: 200,
+    borderRadius: 100,
+    marginBottom: 20,
+    overflow: 'hidden',
+  },
+  placeholderCircle: {
+    width: '100%',
+    height: '100%',
+    borderRadius: 100,
+    backgroundColor: 'lightgray',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
   button: {
-    backgroundColor: 'blue',
+    backgroundColor: Colors.primaryColor,
     paddingVertical: 10,
     paddingHorizontal: 20,
     borderRadius: 5,
+    margin: 10
   },
   buttonText: {
     color: 'white',
