@@ -1,17 +1,50 @@
 import { View, Text, StyleSheet, ScrollView } from 'react-native'
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Colors } from '@/constants/Colors'
 import VectorIcon from '@/app/utils/VectorIcons'
 import { MessagesData } from '@/app/utils/MessageData'
+import { firestore, getDocs, collection } from '@/firebase/firebaseconfig'
+
+type message = {
+  index: number,
+  sender: boolean,
+  message: string
+}
 
 export default function ChatBody() {
   const scrollViewRef = useRef<ScrollView>(null);
 
   const [messages, setMessages] = useState([]);
 
-  const UserId = "1";
+  const [fmessage, setFMessage] = useState<message[]>([]);
 
-  const SenderMessage = ({ message }) => {
+  // const UserId = "1";
+
+ 
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const chatRef = collection(firestore, "message")
+      const querySnapshot = await getDocs(chatRef)
+
+      const msg: message[] = [];
+
+      querySnapshot.forEach((chat) => {
+        const { index, sender, message } = chat.data();
+        msg.push({ index, sender, message })
+      }
+      )
+
+      console.log(msg)
+
+      setFMessage(msg)
+
+    }
+
+    fetchData()
+  }, [])
+
+  const SenderMessage = ({message}: {message:string} ) => {
     return (
       <View style={styles.userContainer}>
         <View style={styles.userInnerContainer}>
@@ -29,7 +62,7 @@ export default function ChatBody() {
     );
   };
 
-  const OtherMessage = ({ message }) => {
+  const OtherMessage = ({message}: {message:string}) => {
     return (
       <View style={styles.otherUserContainer}>
         <View style={styles.otherUserInnerContainer}>
@@ -53,9 +86,9 @@ export default function ChatBody() {
         showsVerticalScrollIndicator={false}>
 
         <View>
-          {MessagesData.map(item => (
+          {fmessage.map(item => (
             <>
-              {item.id === UserId ? (
+              {item.sender ? (
                 <SenderMessage message={item.message} />
               ) : (
                 <OtherMessage message={item.message} />

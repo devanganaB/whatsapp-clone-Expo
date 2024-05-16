@@ -85,7 +85,7 @@ export const ChatListData = [
   },
   {
     id: 10,
-    name: 'Saloniiii',
+    name: 'Meow',
     profile: User9,
     time: '9:10',
     message: 'Nice',

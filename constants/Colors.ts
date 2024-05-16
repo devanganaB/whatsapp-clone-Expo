@@ -36,5 +36,6 @@ export const Colors = {
   white: '#FFFFFF',
   black: '#000000',
   teal: '#36897f',
-  red: '#f44336'
+  red: '#f44336',
+  blue: '#2986cc'
 };

@@ -6,18 +6,18 @@ import Status2 from '../../assets/images/status2.jpeg';
 export const RecentStatusData = [
   {
     id: 1,
-    name: 'Sameer Kashyap',
+    name: 'Programmer',
     userImg: User1,
     storyImg: Status1,
-    storyMsg: 'My Latest Art 🍁',
+    storyMsg: 'Summer is coming... 🍁',
     time: 'Today, 6:32 PM',
   },
   {
     id: 2,
-    name: 'Shivani Joshi',
+    name: 'Hackur',
     userImg: User2,
     storyImg: Status2,
-    storyMsg: 'Happy Birthday Olive 🎂🎁🎉',
+    storyMsg: 'Happy Birthday Raju 🎂🎁🎉',
     time: 'Yesterday, 9:43 PM',
   },
 ];

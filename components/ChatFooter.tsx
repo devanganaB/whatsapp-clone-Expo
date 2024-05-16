@@ -4,7 +4,11 @@ import { Colors } from '@/constants/Colors';
 import VectorIcon from '@/app/utils/VectorIcons';
 import { TextInput } from 'react-native-gesture-handler';
 
-export default function ChatFooter() {
+type ChatFooterProps = {
+    addMessage: (message: string) => void;
+  };
+
+export default function ChatFooter({ addMessage }: ChatFooterProps) {
 
     const [message, setMessage] = useState('');
     const [sendEnable, setSendEnable] = useState(false);
@@ -15,14 +19,23 @@ export default function ChatFooter() {
     };
 
     const onSend = () => {
+        
+        setMessage('');
+        setSendEnable(false);
+        Alert.alert('Message sent!')
+
+        // if (message.trim() !== '') {
+        //     addMessage(message);
+        //     setMessage('');
+        //     Alert.alert('Message sent!');
+        //   } else {
+        //     Alert.alert('Please enter a message.');
+        //   }
         // chatRef.collection('messages').add({
         //   body: message,
         //   sender: userId,
         //   timestamp: firestore.FieldValue.serverTimestamp(),
         // });
-        setMessage('');
-        setSendEnable(false);
-        Alert.alert('Message sent!')
       };
 
     return (

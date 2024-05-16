@@ -3,9 +3,11 @@ import React, { useState } from 'react'
 import * as ImagePicker from 'expo-image-picker';
 // import Profile from '@/assets/images/user1.jpg'
 import { Colors } from '@/constants/Colors';
+import { getStorage, ref, uploadBytes, getDownloadURL } from '@/firebase/firebaseconfig'
 
 export default function CameraTab() {
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedImage, setSelectedImage] = useState<string>();
+
 
 
 
@@ -26,19 +28,50 @@ export default function CameraTab() {
 
     if (!result.canceled) {
       setSelectedImage(result.assets[0].uri);
+      await uploadImageAsync(result.assets[0].uri);
     }
   };
 
   // Function to handle image removal
   const removeImage = () => {
-    setSelectedImage(null);
+    setSelectedImage("");
   };
 
+
+  async function uploadImageAsync(uri: string) {
+    try {
+      const response = await fetch(uri);
+      const blob = await response.blob();
+      const filename = uri.split('/').pop();
+      const storageRef = ref(getStorage(), `profileImages/${filename}`);
+      await uploadBytes(storageRef, blob);
+      const url = await getDownloadURL(storageRef);
+      console.log(url);
+    }
+    catch (error) {
+      console.error("Error uploading image: ", error);
+    }
+  }
+
+  async function retrieveImage() {
+    try {
+      const url = await getDownloadURL(ref(getStorage(), 'profileImages/imageFileName'));
+      console.log("Image URL: ", url);
+      // Use the retrieved URL to display the image
+    } catch (error) {
+      console.error("Error retrieving image: ", error);
+    }
+  }
+
   return (
+
     <View style={styles.container}>
       {/* {selectedImage && (
         <Image source={{ uri: selectedImage }} style={styles.profileImage} />
       )} */}
+      <View style={styles.profileHeader}>
+        <Text style={{fontWeight:'800'}}>Profile Picture</Text>
+      </View>
       <View style={styles.imageContainer}>
         <Pressable onPress={pickImageFromGallery}>
           {selectedImage ? (
@@ -94,6 +127,10 @@ const styles = StyleSheet.create({
     backgroundColor: 'lightgray',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  profileHeader: {
+    margin: 20,
+    fontSize: 20,
   },
   button: {
     backgroundColor: Colors.primaryColor,
